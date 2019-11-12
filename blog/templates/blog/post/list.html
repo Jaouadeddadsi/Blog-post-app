@@ -1,0 +1,18 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block title%}My blog{% endblock %}
+
+{% block content %}
+<h1>My blog</h1>
+<ul id="feed" class="collection">
+  {% for post in posts %}
+  <li class="collection-item avatar">
+    <img src="{% static "imgs/doge.jpg" %}" alt="" class="circle">
+    <h4><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h4>
+    <p class="date">Publidhed {{ post.publish }} by {{ post.author }}</p>
+    <p class="blog-body">{{ post.body|truncatewords:30|linebreaks }}</p>
+  </li>
+  {% endfor %}
+</ul>
+{% include "pagination.html" with page=posts %}
+{% endblock %}

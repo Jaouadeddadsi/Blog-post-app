@@ -1,0 +1,17 @@
+<ul class="pagination">
+  <li class="disabled"><a href="#"><i class="material-icons">chevron_left</i></a></li>
+  {% if page.has_previous %}
+    <li class="waves-effect">
+      <a href="?page={{ page.previous_page_number }}">Previous</a>
+    </li>
+  {% endif %}
+  <li class="active">
+    <button type="button" class="btn green">{{ page.number }}</button>
+  </li>
+  {% if page.has_next %}
+    <li class="waves-effect">
+      <a href="?page={{ page.next_page_number }}">Next</a>
+    </li>
+  {% endif %}
+  <li class="disabled"><a href="#"><i class="material-icons">chevron_right</i></a></li>
+</ul>

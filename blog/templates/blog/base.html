@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{% endblock %}</title>
+
+  <!-- <link rel="stylesheet" href="{% static "css/bootstrap.css" %}"> -->
+  <link rel="stylesheet" href="{% static "css/blog.css" %}">
+
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="{% static "css/materialize.min.css" %}" media="screen,projection" />
+
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+  <!-- navigation bar -->
+  <!-- Dropdown Structure -->
+  <div class="navbar-fixed">
+    <nav class="blue darken-1">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">
+            Blog App
+          </a>
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a href="#">
+                <i class="material-icons left">home</i>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="material-icons left">apps</i>
+                About
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- content -->
+  <div class="container">
+    <div class="row">
+      <!-- main content -->
+      <div id="main" class="col s12 m9">
+        {% block content %}
+        {% endblock %}
+      </div>
+
+      <!-- sidebar -->
+      <div id="right-content" class="col m3 hidden-xs hidden-ms">
+
+      </div>
+    </div>
+  </div>
+
+  <script src="{% static "js/jquery-1.11.3.js" %}"></script>
+  <!--JavaScript at end of body for optimized loading-->
+  <script type="text/javascript" src="{% static "js/materialize.min.js" %}"></script>
+  <!-- <script src="{% static "js/bootstrap.js" %}"></script> -->
+  <script src="{% static "js/main.js" %}"></script>
+</body>
+
+</html>
