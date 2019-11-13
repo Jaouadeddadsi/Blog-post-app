@@ -12,3 +12,7 @@ div.blog-body {
   color: black;
   font-weight: bold;
 }
+
+div.blog-body .action-list {
+  padding: 1em;
+}

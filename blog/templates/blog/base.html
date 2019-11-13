@@ -31,12 +31,12 @@
     <nav class="blue darken-1">
       <div class="container">
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo">
+          <a href="{% url "blog:post_list" %}" class="brand-logo">
             Blog App
           </a>
           <ul class="right hide-on-med-and-down">
             <li>
-              <a href="#">
+              <a href="{% url "blog:post_list" %}">
                 <i class="material-icons left">home</i>
                 Home
               </a>

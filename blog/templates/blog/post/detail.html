@@ -10,6 +10,14 @@
 </p>
 <div class="blog-body">
   {{ post.body|linebreaks }}
+  <!-- action list -->
+  <div class="action-list">
+    <!-- share list -->
+    <a href="{% url "blog:post_share" post.id %}">
+        <i class="material-icons">share</i>
+    </a>
+  </div>
+
 </div>
 
 {% endblock content %}
