@@ -11,13 +11,45 @@
 <div class="blog-body">
   {{ post.body|linebreaks }}
   <!-- action list -->
+  <div class="divider"></div>
   <div class="action-list">
     <!-- share list -->
     <a href="{% url "blog:post_share" post.id %}">
         <i class="material-icons">share</i>
     </a>
   </div>
-
 </div>
+<!-- total comment -->
+{% with comments.count as total_comments %}
+  <h5>
+    {{ total_comments }} comment{{ total_comments|pluralize }}
+  </h5>
+{% endwith %}
+
+<!-- display form  -->
+{% if new_comment %}
+  <h2>Your comment has been added.</h2>
+{% else %}
+  <h2>Add a new comment</h2>
+  <form action="." method="post">
+    {% csrf_token %}
+    {{ comment_form.as_p }}
+    <p><input type="submit" value="Add comment"></p>
+  </form>
+{% endif %}
+
+<!-- list of comments -->
+<ul class="collection">
+  {% for comment in comments %}
+  <li class="collection-item avatar">
+    <i class="material-icons circle">comment</i>
+    <h4> {{ comment.name }}
+      <span class="h6">{{ comment.created }}</span></h4>
+    <p>
+      {{ comment.body|linebreaks }}
+    </p>
+  </li>
+  {% endfor %}
+</ul>
 
 {% endblock content %}

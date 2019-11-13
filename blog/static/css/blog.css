@@ -16,3 +16,7 @@ div.blog-body {
 div.blog-body .action-list {
   padding: 1em;
 }
+
+p.share-succes {
+  padding-top: 2em;
+}
